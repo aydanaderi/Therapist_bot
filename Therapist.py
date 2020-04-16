@@ -4,7 +4,7 @@ import time
 
 bot = telepot.Bot('TOKEN')
 
-def talking(msg):
+def therapist(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     text = msg['text']
     if text == "/start":
@@ -12,7 +12,7 @@ def talking(msg):
     else:
         bot.sendMessage(chat_id, eliza_chatbot.respond(text))
 
-bot.message_loop(talking)
-print ('Listening ...')
+bot.message_loop(therapist)
+print ('waiting ...')
 while 1:
     time.sleep(10)
